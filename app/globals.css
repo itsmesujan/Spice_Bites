@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── CSS Custom Properties ───────────────────────────────────────────── */
+:root {
+  --spice:      #E07B2E;
+  --spice-dark: #C85E18;
+  --gold:       #BF8A30;
+  --curry-dark: #1C1008;
+  --cream:      #FDFAF5;
+}
+
+/* ─── Base ───────────────────────────────────────────────────────────── */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cream-50 text-curry-700 font-sans antialiased;
+    font-feature-settings: "palt" 1;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-jp text-curry-900;
+  }
+}
+
+/* ─── Components ─────────────────────────────────────────────────────── */
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-spice-500 px-6 py-3 text-sm font-bold text-white transition-all duration-200 hover:bg-spice-600 hover:shadow-lg active:scale-95 focus:outline-none focus:ring-2 focus:ring-spice-400 focus:ring-offset-2;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-spice-500 px-6 py-3 text-sm font-bold text-spice-600 transition-all duration-200 hover:bg-spice-500 hover:text-white active:scale-95 focus:outline-none focus:ring-2 focus:ring-spice-400 focus:ring-offset-2;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-white/70 px-6 py-3 text-sm font-bold text-white transition-all duration-200 hover:bg-white/20 hover:border-white active:scale-95 focus:outline-none;
+  }
+
+  .section-label {
+    @apply font-display text-xs tracking-[0.25em] uppercase text-spice-500 font-semibold;
+  }
+
+  .section-title {
+    @apply font-jp text-3xl md:text-4xl font-bold text-curry-900 leading-tight;
+  }
+
+  .section-title-lg {
+    @apply font-jp text-4xl md:text-5xl font-bold text-curry-900 leading-tight;
+  }
+
+  .card {
+    @apply rounded-2xl bg-white shadow-sm border border-cream-200 overflow-hidden transition-shadow duration-200 hover:shadow-md;
+  }
+
+  .nav-link {
+    @apply text-sm font-medium text-curry-700 hover:text-spice-500 transition-colors duration-150 relative after:absolute after:left-0 after:-bottom-0.5 after:h-0.5 after:w-0 after:bg-spice-500 after:transition-all after:duration-200 hover:after:w-full;
+  }
+
+  .spice-badge {
+    @apply inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-xs font-semibold;
+  }
+}
+
+/* ─── Utilities ──────────────────────────────────────────────────────── */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* ─── Scrollbar ──────────────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--cream);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--gold);
+  border-radius: 3px;
+}
